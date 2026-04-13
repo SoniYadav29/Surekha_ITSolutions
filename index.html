@@ -20,11 +20,18 @@
       sizes="180x180"
       href="assets/images/fevicon.png"
     />
-    <title>Surekha IT Solutions</title>
+    <title>
+      Laptop Repair & Data Recovery in Mumbai | Surekha IT Solutions
+    </title>
     <meta
       name="description"
       content="Surekha IT Solutions provides fast, reliable and affordable doorstep IT services in Mumbai. Laptop repair, data recovery, OS installation, CCTV & networking."
     />
+    <meta
+      name="keywords"
+      content="Laptop Repair Mumbai, Data Recovery Mumbai, IT Services Andheri, Computer Repair Mumbai, CCTV Installation Mumbai, Doorstep IT Services"
+    />
+    <meta name="robots" content="index, follow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -42,7 +49,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
       rel="stylesheet"
     />
+
     <style>
+      /* ══════════════════════════════════════
+         DESIGN TOKENS
+      ══════════════════════════════════════ */
       :root {
         --blue: #1b5bff;
         --blue-dark: #1040d6;
@@ -59,7 +70,9 @@
         --shadow-lg: 0 20px 60px rgba(27, 91, 255, 0.13);
         font-family: "Poppins", sans-serif;
       }
-      * {
+      *,
+      *::before,
+      *::after {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -83,7 +96,9 @@
         border-radius: 4px;
       }
 
-      /* ── TOPBAR ── */
+      /* ══════════════════════════════════════
+         TOPBAR
+      ══════════════════════════════════════ */
       .topbar {
         background: var(--dark2);
         padding: 0.55rem 0;
@@ -111,8 +126,9 @@
         background: var(--blue-dark);
       }
 
-      /* ── NAVBAR ── */
-      /* ── NAVBAR ── */
+      /* ══════════════════════════════════════
+         NAVBAR
+      ══════════════════════════════════════ */
       .site-nav {
         background: #fff;
         padding: 0;
@@ -126,41 +142,35 @@
         box-shadow: 0 4px 30px rgba(27, 91, 255, 0.1);
       }
 
-      /* Logo stays vertically centred */
+      .navbar {
+        min-height: 64px;
+      }
       .navbar-brand {
         padding: 0;
         display: flex;
         align-items: center;
         gap: 0.6rem;
-        height: 64px; /* fixed nav height */
-      }
-
-      /* Force entire nav row to one line */
-      .navbar {
-        min-height: 64px;
+        height: 64px;
       }
       .navbar-collapse {
-        flex-grow: 0; /* don't stretch and push items */
+        flex-grow: 0;
       }
       .navbar-nav {
-        align-items: center; /* vertically centre every li */
+        align-items: center;
         gap: 0;
-        flex-wrap: nowrap; /* never wrap to second line */
+        flex-wrap: nowrap;
       }
-
-      /* Every nav item same height as nav bar */
       .navbar-nav .nav-item {
         display: flex;
         align-items: center;
         height: 64px;
       }
-
       .nav-link {
         font-weight: 600;
         font-size: 0.87rem;
         color: var(--dark) !important;
-        padding: 0 1rem !important; /* horizontal only — vertical handled by flex */
-        line-height: 1; /* ← kills accidental vertical shift */
+        padding: 0 1rem !important;
+        line-height: 1;
         display: flex;
         align-items: center;
         height: 100%;
@@ -171,7 +181,7 @@
       .nav-link::after {
         content: "";
         position: absolute;
-        bottom: 0; /* flush to nav bottom edge */
+        bottom: 0;
         left: 1rem;
         right: 1rem;
         height: 2px;
@@ -186,13 +196,12 @@
         transform: scaleX(1);
       }
 
-      /* Book Service button — separate from nav-link underline behaviour */
+      /* Book Service button */
       .nav-item.ms-lg-3 {
         display: flex;
         align-items: center;
-        height: auto !important; /* ← remove the 64px height */
+        height: auto !important;
       }
-
       .btn-nav-cta {
         display: inline-flex !important;
         align-items: center !important;
@@ -205,7 +214,7 @@
         ) !important;
         color: #fff !important;
         border-radius: 50px !important;
-        padding: 15px 24px !important;
+        padding: 8px 20px !important;
         font-weight: 700 !important;
         font-size: 0.82rem !important;
         line-height: 1 !important;
@@ -214,8 +223,8 @@
         transition:
           opacity 0.2s,
           transform 0.2s !important;
-        width: auto !important; /* ← don't stretch full width */
-        height: auto !important; /* ← don't inherit parent height */
+        width: auto !important;
+        height: auto !important;
       }
       .btn-nav-cta:hover {
         opacity: 0.9 !important;
@@ -223,7 +232,7 @@
         color: #fff !important;
       }
       .btn-nav-cta::after {
-        display: none !important; /* no underline on button */
+        display: none !important;
       }
       .navbar-toggler {
         border: 1.5px solid var(--border);
@@ -231,7 +240,9 @@
         padding: 0.3rem 0.55rem;
       }
 
-      /* ── HERO ── */
+      /* ══════════════════════════════════════
+         HERO
+      ══════════════════════════════════════ */
       .hero {
         background: linear-gradient(
           135deg,
@@ -311,7 +322,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(2.3rem, 5vw, 3.8rem);
+        font-size: clamp(2rem, 5vw, 3.8rem);
         font-weight: 900;
         line-height: 1.1;
         letter-spacing: -1px;
@@ -394,6 +405,7 @@
         box-shadow: 0 14px 40px rgba(27, 91, 255, 0.45);
         color: #fff;
       }
+
       .btn-hero-s {
         background: #fff;
         color: var(--dark);
@@ -414,6 +426,7 @@
         transform: translateY(-3px);
         box-shadow: 0 8px 22px rgba(27, 91, 255, 0.1);
       }
+
       .hero-btns {
         display: flex;
         gap: 0.9rem;
@@ -465,7 +478,7 @@
         background: var(--border);
       }
 
-      /* hero card */
+      /* Hero card */
       .hero-card-wrap {
         position: relative;
         max-width: 440px;
@@ -588,11 +601,6 @@
         right: -28px;
         animation-delay: 1.8s;
       }
-      .fcard.fc3 {
-        bottom: 10px;
-        left: -28px;
-        animation-delay: 0.9s;
-      }
       .fcard-icon {
         width: 30px;
         height: 30px;
@@ -614,7 +622,9 @@
         color: var(--grey);
       }
 
-      /* ── BRAND STRIP ── */
+      /* ══════════════════════════════════════
+         BRAND STRIP
+      ══════════════════════════════════════ */
       .brand-strip {
         background: var(--grey-light);
         border-top: 1.5px solid var(--border);
@@ -653,7 +663,9 @@
         color: var(--blue);
       }
 
-      /* ── SECTION COMMON ── */
+      /* ══════════════════════════════════════
+         SECTION COMMON
+      ══════════════════════════════════════ */
       section {
         padding: 88px 0;
       }
@@ -690,7 +702,9 @@
         max-width: 550px;
       }
 
-      /* ── SERVICES ── */
+      /* ══════════════════════════════════════
+         SERVICES
+      ══════════════════════════════════════ */
       .services {
         background: #fff;
       }
@@ -774,7 +788,9 @@
         gap: 0.65rem;
       }
 
-      /* ── ABOUT ── */
+      /* ══════════════════════════════════════
+         ABOUT
+      ══════════════════════════════════════ */
       .about {
         background: var(--grey-light);
       }
@@ -817,7 +833,7 @@
       .exp-badge {
         position: absolute;
         bottom: -18px;
-        right: -40px;
+        right: -30px;
         background: var(--blue);
         color: #fff;
         border-radius: 14px;
@@ -898,33 +914,9 @@
         color: var(--grey);
       }
 
-      .cstrip {
-        display: flex;
-        gap: 1.8rem;
-        flex-wrap: wrap;
-        margin-top: 1.8rem;
-        padding-top: 1.5rem;
-        border-top: 2px solid var(--border);
-      }
-      .citem .cn {
-        font-size: 1.85rem;
-        font-weight: 900;
-        color: var(--blue);
-        line-height: 1;
-      }
-      .citem .cp {
-        color: var(--orange);
-      }
-      .citem .cl {
-        font-size: 0.73rem;
-        color: var(--grey);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
-        margin-top: 0.15rem;
-      }
-
-      /* ── WHY US ── */
+      /* ══════════════════════════════════════
+         WHY US
+      ══════════════════════════════════════ */
       .why {
         background: #fff;
       }
@@ -937,6 +929,9 @@
         transition: all 0.4s;
         height: 100%;
         cursor: default;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .wyc:hover {
         background: #fff;
@@ -954,6 +949,7 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto 1.1rem;
+        flex-shrink: 0;
         transition: all 0.4s;
       }
       .wyc:hover .wy-ic {
@@ -974,236 +970,19 @@
         font-weight: 700;
         color: var(--dark);
         margin-bottom: 0.45rem;
+        width: 100%;
       }
       .wyc p {
         font-size: 0.84rem;
         color: var(--grey);
         line-height: 1.7;
+        margin: 0;
+        width: 100%;
       }
 
-      /* ── PROCESS ── */
-      .process {
-        background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
-        padding: 88px 0;
-        position: relative;
-        overflow: hidden;
-      }
-      .process::before {
-        content: "";
-        position: absolute;
-        top: -200px;
-        right: -100px;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(
-          circle,
-          rgba(27, 91, 255, 0.18),
-          transparent 70%
-        );
-        border-radius: 50%;
-      }
-      .process::after {
-        content: "";
-        position: absolute;
-        bottom: -150px;
-        left: -80px;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(
-          circle,
-          rgba(255, 107, 44, 0.1),
-          transparent 70%
-        );
-        border-radius: 50%;
-      }
-      .prc {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1.5px solid rgba(255, 255, 255, 0.09);
-        border-radius: 18px;
-        padding: 1.9rem 1.5rem;
-        text-align: center;
-        transition: all 0.4s;
-        height: 100%;
-        position: relative;
-        cursor: default;
-      }
-      .prc:hover {
-        background: rgba(27, 91, 255, 0.14);
-        border-color: rgba(27, 91, 255, 0.38);
-        transform: translateY(-8px);
-      }
-      .prc-num {
-        width: 46px;
-        height: 46px;
-        border-radius: 11px;
-        background: var(--blue);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.95rem;
-        font-weight: 900;
-        color: #fff;
-        margin: 0 auto 1.1rem;
-        position: relative;
-      }
-      .prc-num::after {
-        content: "";
-        position: absolute;
-        top: -4px;
-        right: -4px;
-        width: 13px;
-        height: 13px;
-        background: var(--orange);
-        border-radius: 50%;
-        border: 2px solid var(--dark);
-      }
-      .prc i {
-        font-size: 2rem;
-        color: #7b9bff;
-        margin-bottom: 0.8rem;
-        display: block;
-      }
-      .prc h4 {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 0.45rem;
-      }
-      .prc p {
-        font-size: 0.84rem;
-        color: rgba(255, 255, 255, 0.52);
-        line-height: 1.7;
-      }
-      .prc-arr {
-        position: absolute;
-        top: 36px;
-        right: -16px;
-        z-index: 2;
-        color: rgba(255, 255, 255, 0.18);
-        font-size: 1.4rem;
-      }
-
-      /* ── FAQ ── */
-      .faq {
-        background: var(--grey-light);
-      }
-      .faq-side {
-        background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-        border-radius: 18px;
-        padding: 2.8rem 2.2rem;
-        color: #fff;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        overflow: hidden;
-      }
-      .faq-side::before {
-        content: "";
-        position: absolute;
-        top: -80px;
-        right: -80px;
-        width: 240px;
-        height: 240px;
-        background: rgba(255, 255, 255, 0.07);
-        border-radius: 50%;
-      }
-      .faq-side::after {
-        content: "";
-        position: absolute;
-        bottom: -60px;
-        left: -50px;
-        width: 190px;
-        height: 190px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 50%;
-      }
-      .faq-side h3 {
-        font-size: 1.55rem;
-        font-weight: 800;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 0.85rem;
-      }
-      .faq-side p {
-        font-size: 0.88rem;
-        opacity: 0.78;
-        line-height: 1.78;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 1.8rem;
-      }
-      .faq-cta {
-        background: #fff;
-        color: var(--blue);
-        padding: 0.7rem 1.5rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 0.86rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        position: relative;
-        z-index: 1;
-        text-decoration: none;
-        transition: all 0.3s;
-        align-self: flex-start;
-      }
-      .faq-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-      }
-      .faq-stats {
-        display: flex;
-        gap: 1.4rem;
-        margin-top: 1.8rem;
-        position: relative;
-        z-index: 1;
-      }
-      .faq-stat .fn {
-        font-size: 1.7rem;
-        font-weight: 900;
-        line-height: 1;
-      }
-      .faq-stat .fl {
-        font-size: 0.7rem;
-        opacity: 0.72;
-        font-weight: 600;
-        letter-spacing: 0.4px;
-        text-transform: uppercase;
-      }
-
-      .accordion-item {
-        background: #fff !important;
-        border: 1.5px solid var(--border) !important;
-        border-radius: 12px !important;
-        margin-bottom: 0.75rem;
-        overflow: hidden;
-      }
-      .accordion-button {
-        font-weight: 700;
-        font-size: 0.91rem;
-        color: var(--dark) !important;
-        background: #fff !important;
-        box-shadow: none !important;
-        padding: 1.1rem 1.3rem;
-      }
-      .accordion-button:not(.collapsed) {
-        color: var(--blue) !important;
-        background: var(--blue-light) !important;
-      }
-      .accordion-button::after {
-        filter: invert(30%) sepia(85%) saturate(2000%) hue-rotate(212deg);
-      }
-      .accordion-body {
-        font-size: 0.87rem;
-        color: var(--grey);
-        line-height: 1.8;
-        padding: 0 1.3rem 1.1rem;
-      }
-
-      /* ── CTA ── */
+      /* ══════════════════════════════════════
+         CTA BANNER
+      ══════════════════════════════════════ */
       .ctab {
         background: linear-gradient(
           135deg,
@@ -1252,7 +1031,7 @@
         background: rgba(255, 255, 255, 0.45);
       }
       .ctab h2 {
-        font-size: clamp(1.75rem, 4vw, 2.7rem);
+        font-size: clamp(1.6rem, 4vw, 2.7rem);
         font-weight: 900;
         color: #fff;
         margin-bottom: 0.9rem;
@@ -1375,7 +1154,9 @@
         text-align: center;
       }
 
-      /* ── CONTACT ── */
+      /* ══════════════════════════════════════
+         CONTACT
+      ══════════════════════════════════════ */
       .contact {
         background: var(--grey-light);
       }
@@ -1472,6 +1253,7 @@
         font-weight: 700;
         color: var(--dark);
         margin-bottom: 0.38rem;
+        display: block;
       }
       .btn-sub {
         background: linear-gradient(135deg, var(--blue), var(--blue-dark));
@@ -1495,104 +1277,21 @@
         box-shadow: 0 10px 32px rgba(27, 91, 255, 0.4);
       }
 
-      /* ── FOOTER ── */
+      /* ══════════════════════════════════════
+         FOOTER
+      ══════════════════════════════════════ */
       footer {
         background: var(--dark2);
         color: rgba(255, 255, 255, 0.72);
       }
-      .flogo-text {
-        font-size: 1.18rem;
-        font-weight: 800;
-        color: #fff;
-      }
-      .flogo-text span {
-        color: #7b9bff;
-      }
-      .fdesc {
-        font-size: 0.84rem;
-        line-height: 1.8;
-        margin: 1rem 0 1.4rem;
-      }
-      .fsoc {
-        display: flex;
-        gap: 0.55rem;
-      }
-      .fsoc a {
-        width: 34px;
-        height: 34px;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.11);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: rgba(255, 255, 255, 0.58);
-        font-size: 0.82rem;
-        text-decoration: none;
-        transition: all 0.3s;
-      }
-      .fsoc a:hover {
-        background: var(--blue);
-        border-color: var(--blue);
-        color: #fff;
-        transform: translateY(-3px);
-      }
-      .ftitle {
-        font-size: 0.76rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.4px;
-        color: rgba(255, 255, 255, 0.38);
-        margin-bottom: 1.1rem;
-      }
-      .flink {
-        display: flex;
-        align-items: center;
-        gap: 0.45rem;
-        color: rgba(255, 255, 255, 0.62);
-        font-size: 0.85rem;
-        margin-bottom: 0.6rem;
-        text-decoration: none;
-        transition: all 0.3s;
-      }
-      .flink:hover {
-        color: #fff;
-        padding-left: 4px;
-      }
-      .flink i {
-        font-size: 0.68rem;
-        color: var(--blue);
-      }
-      .fci {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.65rem;
-        margin-bottom: 0.85rem;
-        font-size: 0.84rem;
-        color: rgba(255, 255, 255, 0.62);
-      }
-      .fci i {
-        color: var(--blue);
-        margin-top: 3px;
-        flex-shrink: 0;
-      }
-      .fci a {
-        color: rgba(255, 255, 255, 0.72);
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      .fci a:hover {
-        color: #fff;
-      }
       .footer-bottom {
         background: rgba(0, 0, 0, 0.22);
-        padding: 1.1rem 0;
-        margin-top: 48px;
-        font-size: 0.79rem;
-        color: rgba(255, 255, 255, 0.42);
+        padding: 1.4rem 0;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.45);
       }
       .footer-bottom a {
-        color: rgba(255, 255, 255, 0.52);
+        color: rgba(255, 255, 255, 0.55);
         text-decoration: none;
         transition: color 0.2s;
       }
@@ -1600,7 +1299,9 @@
         color: #fff;
       }
 
-      /* ── FLOAT WA ── */
+      /* ══════════════════════════════════════
+         WHATSAPP FLOAT
+      ══════════════════════════════════════ */
       .wafloat {
         position: fixed;
         bottom: 26px;
@@ -1651,72 +1352,380 @@
         }
       }
 
-      /* ── RESPONSIVE ── */
+      /* ══════════════════════════════════════
+         RESPONSIVE — TABLET (max 991px)
+      ══════════════════════════════════════ */
       @media (max-width: 991px) {
         .hero {
-          padding: 75px 0 40px;
+          padding: 75px 0 50px;
           min-height: auto;
         }
         .hero-card-wrap {
           margin: 3rem auto 0;
+          max-width: 380px;
         }
-        .fcard.fc3 {
+        .fcard.fc1,
+        .fcard.fc2 {
           display: none;
         }
         .about-img-grid {
           max-width: 380px;
           margin: 0 auto 3rem;
         }
-        .prc-arr {
-          display: none;
+        .exp-badge {
+          right: -10px;
+          bottom: -10px;
         }
         .cta-visual {
           margin-top: 3rem;
         }
+
+        /* Mobile nav dropdown */
+        .navbar-collapse {
+          background: #fff;
+          border-top: 1.5px solid var(--border);
+          padding: 0.5rem 0 1rem;
+          box-shadow: 0 8px 24px rgba(27, 91, 255, 0.08);
+        }
+        .navbar-nav {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 0 !important;
+          width: 100%;
+        }
+        .navbar-nav .nav-item {
+          width: 100%;
+          height: auto !important;
+          border-bottom: 1px solid var(--border);
+        }
+        .navbar-nav .nav-item:last-child {
+          border-bottom: none;
+        }
+        .nav-link {
+          width: 100%;
+          padding: 0.85rem 1.2rem !important;
+          height: auto !important;
+        }
+        .nav-link::after {
+          display: none;
+        }
+        .nav-item.ms-lg-3 {
+          width: 100%;
+          height: auto !important;
+          padding: 0.75rem 1rem;
+          margin: 0 !important;
+        }
+        .btn-nav-cta {
+          width: 100% !important;
+          border-radius: 10px !important;
+          padding: 12px 20px !important;
+          justify-content: center !important;
+        }
       }
+
+      /* ══════════════════════════════════════
+         RESPONSIVE — MOBILE (max 767px)
+      ══════════════════════════════════════ */
       @media (max-width: 767px) {
         section {
-          padding: 60px 0;
+          padding: 55px 0;
+        }
+
+        /* Topbar */
+        .topbar {
+          font-size: 0.74rem;
+          padding: 0.5rem 0;
+          text-align: center;
+        }
+        .topbar .container {
+          flex-direction: column !important;
+          gap: 0.4rem !important;
+          align-items: center !important;
+        }
+        .topbar .d-flex.gap-3 {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 0.5rem !important;
+        }
+
+        /* Hero */
+        .hero {
+          padding: 60px 0 40px;
+        }
+        .hero h1 {
+          font-size: 2rem;
+          letter-spacing: -0.5px;
+        }
+        .hero-desc {
+          font-size: 0.9rem;
         }
         .hero-btns {
           flex-direction: column;
+          gap: 0.7rem;
         }
         .btn-hero-p,
         .btn-hero-s {
           justify-content: center;
+          width: 100%;
+          padding: 0.85rem 1.5rem;
         }
-        .cta-btns {
-          flex-direction: column;
-          align-items: flex-start;
+        .hero-checks {
+          gap: 0.4rem 0.8rem;
         }
-        .btn-cw,
-        .btn-co {
-          justify-content: center;
-        }
-        .htgrid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .topbar .d-flex.gap-3 {
-          display: none !important;
-        }
-        .fcard.fc1,
-        .fcard.fc2 {
-          display: none;
-        }
-        .cstrip {
-          gap: 1rem;
+        .hchk {
+          font-size: 0.8rem;
         }
         .hero-social-proof {
-          gap: 0.8rem;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.75rem;
         }
         .proof-div {
           display: none;
         }
+        .hero-card-wrap {
+          max-width: 100%;
+        }
+        .htgrid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.6rem;
+        }
+        .htgitem {
+          padding: 0.8rem 0.5rem;
+        }
+        .htgitem i {
+          font-size: 1.2rem;
+        }
+        .hero-main-card {
+          padding: 1.2rem;
+        }
+
+        /* Brand strip */
+        .brand-strip {
+          padding: 0.9rem 0;
+        }
+
+        /* Section headings */
+        h2.stitle {
+          font-size: 1.7rem;
+        }
+        .sdesc {
+          font-size: 0.88rem;
+        }
+
+        /* Services */
+        .svc {
+          padding: 1.5rem 1.2rem;
+        }
+        .svc h3 {
+          font-size: 0.97rem;
+        }
+        .svc p {
+          font-size: 0.83rem;
+        }
+
+        /* About */
+        .about-img-grid {
+          max-width: 100%;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.7rem;
+          padding: 1rem;
+          margin-bottom: 2.5rem;
+        }
+        .amic {
+          padding: 0.9rem 0.6rem;
+        }
+        .amic i {
+          font-size: 1.4rem;
+        }
+        .amic span {
+          font-size: 0.62rem;
+        }
+        .exp-badge {
+          right: 0;
+          bottom: -42px;
+          padding: 0.7rem 1rem;
+        }
+        .exp-badge .en {
+          font-size: 1.5rem;
+        }
+        .exp-badge .el {
+          font-size: 0.62rem;
+        }
+        .shape-ring {
+          display: none;
+        }
+
+        /* Why Us */
+        .wyc {
+          padding: 1.3rem 1rem;
+        }
+        .wyc h4 {
+          font-size: 0.88rem;
+        }
+        .wyc p {
+          font-size: 0.78rem;
+        }
+        .wy-ic {
+          width: 52px;
+          height: 52px;
+          border-radius: 13px;
+          margin-bottom: 0.8rem;
+        }
+        .wy-ic i {
+          font-size: 1.25rem;
+        }
+
+        /* CTA */
+        .ctab {
+          padding: 55px 0;
+        }
+        .ctab h2 {
+          font-size: 1.6rem;
+        }
+        .ctab p {
+          font-size: 0.88rem;
+        }
+        .cta-btns {
+          flex-direction: column;
+          gap: 0.7rem;
+        }
+        .btn-cw,
+        .btn-co {
+          justify-content: center;
+          width: 100%;
+        }
+        .cta-phone {
+          width: 100%;
+          justify-content: center;
+          font-size: 0.82rem;
+          padding: 0.7rem 1rem;
+          flex-wrap: wrap;
+          gap: 0.4rem;
+          text-align: center;
+        }
+        .cta-ring {
+          width: 200px;
+          height: 200px;
+        }
+        .cta-inner {
+          width: 145px;
+          height: 145px;
+        }
+        .cta-inner i {
+          font-size: 2rem;
+        }
+
+        /* Contact */
+        .ccard {
+          padding: 1.5rem 1.2rem;
+        }
+        .cirow {
+          gap: 0.7rem;
+          padding: 0.85rem 0;
+        }
+        .ciico {
+          width: 38px;
+          height: 38px;
+          flex-shrink: 0;
+        }
+        .cival {
+          font-size: 0.85rem;
+        }
+        .cilbl {
+          font-size: 0.67rem;
+        }
+        .form-control,
+        .form-select {
+          font-size: 0.85rem !important;
+          padding: 0.65rem 0.85rem !important;
+        }
+        .btn-sub {
+          font-size: 0.88rem;
+          padding: 0.8rem;
+        }
+
+        /* Footer */
+        .footer-bottom {
+          padding: 1rem 0;
+          font-size: 0.75rem;
+          text-align: center;
+        }
+        .footer-bottom .container {
+          flex-direction: column !important;
+          gap: 0.4rem !important;
+        }
+
+        /* WhatsApp */
+        .wafloat {
+          bottom: 18px;
+          right: 16px;
+          width: 48px;
+          height: 48px;
+          font-size: 1.25rem;
+        }
+      }
+
+      /* ══════════════════════════════════════
+         RESPONSIVE — SMALL MOBILE (max 480px)
+      ══════════════════════════════════════ */
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.75rem;
+        }
+        .eyebrow-tag {
+          font-size: 0.66rem;
+          padding: 0.3rem 0.75rem;
+        }
+        h2.stitle {
+          font-size: 1.5rem;
+        }
+        .wyc {
+          padding: 1.1rem 0.8rem;
+        }
+        .wyc h4 {
+          font-size: 0.82rem;
+        }
+        .wyc p {
+          font-size: 0.74rem;
+          line-height: 1.55;
+        }
+        .wy-ic {
+          width: 46px;
+          height: 46px;
+        }
+        .wy-ic i {
+          font-size: 1.1rem;
+        }
+        .htgrid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.5rem;
+        }
+        .htgitem span {
+          font-size: 0.55rem;
+        }
+        .svc {
+          padding: 1.2rem 1rem;
+        }
+        .ccard {
+          padding: 1.2rem 1rem;
+        }
+        .ctab h2 {
+          font-size: 1.4rem;
+        }
+        .btn-hero-p,
+        .btn-hero-s {
+          font-size: 0.86rem;
+          padding: 0.75rem 1.2rem;
+        }
       }
     </style>
   </head>
+
   <body>
-    <!-- TOPBAR -->
+    <!-- ══════════════════════════════════════
+         TOPBAR
+    ══════════════════════════════════════ -->
     <div class="topbar">
       <div
         class="container d-flex justify-content-between align-items-center flex-wrap gap-2"
@@ -1734,25 +1743,35 @@
         <div class="d-flex align-items-center gap-3">
           <a href="tel:9702384343"
             ><i class="fas fa-phone-alt me-1"></i>+91 9702384343</a
-          ><span>/</span>
-          <a href="tel:9702384343"
+          >
+          <span>/</span>
+          <a href="tel:8779394672"
             ><i class="fas fa-phone-alt me-1"></i>+91 8779394672</a
           >
         </div>
       </div>
     </div>
 
-    <!-- NAVBAR -->
+    <!-- ══════════════════════════════════════
+         NAVBAR
+    ══════════════════════════════════════ -->
     <nav class="site-nav navbar navbar-expand-lg" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="assets/images/logo.png" alt="logo" style="width: 15%" />
+          <img
+            src="assets/images/logo.png"
+            alt="Surekha IT Solutions Logo"
+            style="height: 42px; width: auto"
+          />
         </a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <i
             class="fas fa-bars"
@@ -1782,7 +1801,9 @@
       </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
     <section class="hero" id="home">
       <div class="hero-blob1"></div>
       <div class="hero-blob2"></div>
@@ -1801,6 +1822,7 @@
 
       <div class="container py-4">
         <div class="row align-items-center gy-5">
+          <!-- Left: Copy -->
           <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
             <div class="eyebrow-tag">
               <div class="eline"></div>
@@ -1843,9 +1865,10 @@
                 target="_blank"
                 class="btn-hero-s"
                 style="color: #1bae5c; border-color: rgba(27, 174, 92, 0.3)"
-                ><i class="fab fa-whatsapp" style="font-size: 1.05rem"></i> Chat
-                on WhatsApp</a
               >
+                <i class="fab fa-whatsapp" style="font-size: 1.05rem"></i> Chat
+                on WhatsApp
+              </a>
             </div>
             <div class="hero-social-proof">
               <div class="proof-avatars">
@@ -1870,6 +1893,7 @@
             </div>
           </div>
 
+          <!-- Right: Card -->
           <div
             class="col-lg-6 d-flex justify-content-center"
             data-aos="fade-left"
@@ -1888,7 +1912,18 @@
                   <div class="fcard-sub">All over Mumbai</div>
                 </div>
               </div>
-
+              <div class="fcard fc2">
+                <div class="fcard-icon" style="background: var(--orange-light)">
+                  <i
+                    class="fas fa-star"
+                    style="color: var(--orange); font-size: 0.72rem"
+                  ></i>
+                </div>
+                <div>
+                  <div class="fcard-val">4.9/5.0 Rating</div>
+                  <div class="fcard-sub">500+ Reviews</div>
+                </div>
+              </div>
               <div class="hero-main-card">
                 <div
                   style="
@@ -1957,9 +1992,11 @@
       </div>
     </section>
 
-    <!-- BRAND STRIP -->
+    <!-- ══════════════════════════════════════
+         BRAND STRIP
+    ══════════════════════════════════════ -->
     <div class="brand-strip">
-      <div class="btrack" id="btrack">
+      <div class="btrack">
         <div class="bpill">
           <i class="fas fa-laptop" style="color: var(--blue)"></i>Laptop &
           Desktop Repair
@@ -1988,9 +2025,10 @@
         <div class="bpill">
           <i class="fas fa-bolt" style="color: #f59e0b"></i>Same Day Service
         </div>
-        <!-- duplicated for seamless loop -->
+        <!-- Duplicated for seamless loop -->
         <div class="bpill">
-          <i class="fas fa-laptop" style="color: var(--blue)"></i>Laptop Repair
+          <i class="fas fa-laptop" style="color: var(--blue)"></i>Laptop &
+          Desktop Repair
         </div>
         <div class="bpill">
           <i class="fas fa-database" style="color: #9b59b6"></i>Data Recovery
@@ -2019,7 +2057,9 @@
       </div>
     </div>
 
-    <!-- SERVICES -->
+    <!-- ══════════════════════════════════════
+         SERVICES
+    ══════════════════════════════════════ -->
     <section class="services" id="services">
       <div class="container">
         <div class="row justify-content-between align-items-end mb-5">
@@ -2186,7 +2226,9 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ══════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════ -->
     <section class="about" id="about">
       <div class="container">
         <div class="row align-items-center gy-5">
@@ -2212,7 +2254,7 @@
                 </div>
                 <div class="amic">
                   <i class="fas fa-wifi" style="color: #1bae5c"></i
-                  ><span>Networking Support</span>
+                  ><span>Networking</span>
                 </div>
                 <div class="amic">
                   <i class="fas fa-clock" style="color: #e91e8c"></i
@@ -2221,18 +2263,17 @@
               </div>
               <div class="exp-badge">
                 <span class="en">10+</span>
-                <span class="el">Years of<br />Excellence</span>
+                <span class="el">Years of Excellence</span>
               </div>
             </div>
           </div>
-
           <div
             class="col-lg-7 ps-lg-5"
             data-aos="fade-left"
             data-aos-duration="900"
           >
             <div class="stag"><span class="sl"></span> About Company</div>
-            <h2 class="stitle" style="text-align: left">
+            <h2 class="stitle">
               Navigating Tech Horizons<br /><span>Together in Mumbai</span>
             </h2>
             <p
@@ -2244,19 +2285,22 @@
               "
             >
               Surekha IT Solutions is a trusted computer repair and IT service
-              provider in Andheri-East(Mumbai). We specialize in laptop and
+              provider in Andheri-East, Mumbai. We specialize in laptop and
               desktop repair, data recovery, and hardware solutions. Our goal is
               to provide fast, reliable, and affordable services to our
-              customers.<br />Surekha IT Solutions has been a trusted partner
-              for hundreds of homes and businesses — professional, affordable,
-              doorstep IT services you can rely on.
+              customers.<br /><br />
+              Surekha IT Solutions has been a trusted partner for hundreds of
+              homes and businesses — professional, affordable, doorstep IT
+              services you can rely on.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY US -->
+    <!-- ══════════════════════════════════════
+         WHY US
+    ══════════════════════════════════════ -->
     <section class="why" id="why-us">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
@@ -2334,7 +2378,9 @@
       </div>
     </section>
 
-    <!-- CTA BANNER -->
+    <!-- ══════════════════════════════════════
+         CTA BANNER
+    ══════════════════════════════════════ -->
     <section class="ctab">
       <div class="container position-relative" style="z-index: 1">
         <div class="row align-items-center gy-5">
@@ -2354,9 +2400,10 @@
                 target="_blank"
                 class="btn-co"
                 style="border-color: rgba(37, 211, 102, 0.45); color: #4ade80"
-                ><i class="fab fa-whatsapp" style="font-size: 1.05rem"></i>
-                WhatsApp Chat</a
               >
+                <i class="fab fa-whatsapp" style="font-size: 1.05rem"></i>
+                WhatsApp Chat
+              </a>
             </div>
             <div class="cta-phone">
               <i class="fas fa-phone-alt"></i> +91 8779394672 &nbsp;|&nbsp;
@@ -2403,7 +2450,10 @@
         </div>
       </div>
     </section>
-    <!-- CONTACT -->
+
+    <!-- ══════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════ -->
     <section class="contact" id="contact">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
@@ -2413,6 +2463,7 @@
           <h2 class="stitle">Book Your <span>Service Today</span></h2>
         </div>
         <div class="row g-4">
+          <!-- Info -->
           <div class="col-lg-4" data-aos="fade-right">
             <div class="ccard">
               <h5
@@ -2478,6 +2529,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Form -->
           <div class="col-lg-8" data-aos="fade-left">
             <div class="ccard">
               <h5
@@ -2493,8 +2546,8 @@
               <form id="bookForm" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6">
-                    <label class="flbl">Full Name *</label
-                    ><input
+                    <label class="flbl">Full Name *</label>
+                    <input
                       type="text"
                       class="form-control"
                       id="bName"
@@ -2503,8 +2556,8 @@
                     />
                   </div>
                   <div class="col-md-6">
-                    <label class="flbl">Phone Number *</label
-                    ><input
+                    <label class="flbl">Phone Number *</label>
+                    <input
                       type="tel"
                       class="form-control"
                       id="bPhone"
@@ -2513,8 +2566,8 @@
                     />
                   </div>
                   <div class="col-12">
-                    <label class="flbl">Area / Address</label
-                    ><input
+                    <label class="flbl">Area / Address</label>
+                    <input
                       type="text"
                       class="form-control"
                       id="bAddr"
@@ -2550,8 +2603,8 @@
                     </select>
                   </div>
                   <div class="col-12">
-                    <label class="flbl">Issue Description</label
-                    ><textarea
+                    <label class="flbl">Issue Description</label>
+                    <textarea
                       class="form-control"
                       id="bMsg"
                       rows="3"
@@ -2573,30 +2626,48 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
     <footer>
       <div class="footer-bottom">
         <div
-          class="container d-flex justify-content-center align-items-center text-center"
+          class="container d-flex justify-content-between align-items-center flex-wrap gap-2"
         >
-          Surekha IT Solutions
+          <span
+            >© <span id="yr"></span> Surekha IT Solutions. All rights
+            reserved.</span
+          >
+          <span style="color: rgba(255, 255, 255, 0.55)"
+            >We Fix &bull; We Recover &bull; We Care</span
+          >
         </div>
       </div>
     </footer>
 
+    <!-- WhatsApp Float -->
     <a
       href="https://wa.me/919702384343"
       class="wafloat"
       target="_blank"
       aria-label="WhatsApp"
-      ><i class="fab fa-whatsapp"></i
-    ></a>
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <!-- ══════════════════════════════════════
+         SCRIPTS
+    ══════════════════════════════════════ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <script>
+      /* Footer year */
+      document.getElementById("yr").textContent = new Date().getFullYear();
+
+      /* AOS init */
       AOS.init({
         duration: 800,
         easing: "ease-out-cubic",
@@ -2604,36 +2675,15 @@
         offset: 50,
       });
 
-      // Sticky nav shadow
+      /* Sticky nav shadow */
       window.addEventListener("scroll", () =>
         document
           .getElementById("mainNav")
           .classList.toggle("scrolled", scrollY > 50),
       );
 
-      // GSAP counters
+      /* GSAP hero entrance */
       gsap.registerPlugin(ScrollTrigger);
-      document.querySelectorAll(".ccount").forEach((el) => {
-        ScrollTrigger.create({
-          trigger: el,
-          once: true,
-          onEnter: () => {
-            gsap.to(
-              { v: 0 },
-              {
-                v: +el.dataset.t,
-                duration: 1.8,
-                ease: "power2.out",
-                onUpdate: function () {
-                  el.textContent = Math.round(this.targets()[0].v);
-                },
-              },
-            );
-          },
-        });
-      });
-
-      // Hero entrance
       gsap.from(".eyebrow-tag", {
         opacity: 0,
         y: 28,
@@ -2672,17 +2722,17 @@
         delay: 0.45,
       });
 
-      // Parallax blobs on mouse
+      /* Parallax blobs on mouse move */
       document.addEventListener("mousemove", (e) => {
-        const x = (e.clientX / innerWidth - 0.5) * 18,
-          y = (e.clientY / innerHeight - 0.5) * 12;
-        const b1 = document.querySelector(".hero-blob1"),
-          b2 = document.querySelector(".hero-blob2");
+        const x = (e.clientX / innerWidth - 0.5) * 18;
+        const y = (e.clientY / innerHeight - 0.5) * 12;
+        const b1 = document.querySelector(".hero-blob1");
+        const b2 = document.querySelector(".hero-blob2");
         if (b1) b1.style.transform = `translate(${x}px,${y}px)`;
         if (b2) b2.style.transform = `translate(${-x * 0.55}px,${-y * 0.55}px)`;
       });
 
-      // Form submit
+      /* Form submit → WhatsApp */
       document
         .getElementById("bookForm")
         .addEventListener("submit", function (e) {
@@ -2692,18 +2742,21 @@
           const s = document.getElementById("bService").value;
           const res = document.getElementById("bRes");
           const btn = document.getElementById("bBtn");
+
           if (!n || !p || !s) {
             res.innerHTML =
-              '<div style="padding:.75rem 1rem;background:#FFF0F0;border:1.5px solid #FFCCCC;border-radius:10px;color:#CC3333;font-size:.84rem;margin-top:.4rem;"><i class="fas fa-exclamation-triangle me-2"></i>Please fill Name, Phone and Service.</div>';
+              '<div style="padding:.75rem 1rem;background:#FFF0F0;border:1.5px solid #FFCCCC;border-radius:10px;color:#CC3333;font-size:.84rem;margin-top:.4rem"><i class="fas fa-exclamation-triangle me-2"></i>Please fill Name, Phone and Service.</div>';
             res.style.display = "block";
             return;
           }
+
           btn.innerHTML =
             '<i class="fas fa-spinner fa-spin"></i> Processing...';
           btn.disabled = true;
+
           setTimeout(() => {
             res.innerHTML =
-              '<div style="padding:.75rem 1rem;background:#EDFBF3;border:1.5px solid #C0EDCC;border-radius:10px;color:#1BAE5C;font-size:.84rem;margin-top:.4rem;"><i class="fas fa-check-circle me-2"></i><strong>Booking received!</strong> We\'ll call you within 30 minutes.</div>';
+              '<div style="padding:.75rem 1rem;background:#EDFBF3;border:1.5px solid #C0EDCC;border-radius:10px;color:#1BAE5C;font-size:.84rem;margin-top:.4rem"><i class="fas fa-check-circle me-2"></i><strong>Booking received!</strong> We\'ll call you within 30 minutes.</div>';
             res.style.display = "block";
             btn.innerHTML = '<i class="fas fa-check"></i> Booking Confirmed!';
             btn.style.background = "linear-gradient(135deg,#1BAE5C,#0D8A45)";
@@ -2714,16 +2767,18 @@
           }, 1200);
         });
 
-      // Smooth scroll
+      /* Smooth scroll */
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", function (e) {
           const t = document.querySelector(this.getAttribute("href"));
           if (t) {
             e.preventDefault();
-            t.scrollIntoView({ behavior: "smooth" });
+            const offset = document.getElementById("mainNav").offsetHeight + 8;
+            window.scrollTo({ top: t.offsetTop - offset, behavior: "smooth" });
             const c = document.querySelector(".navbar-collapse");
-            if (c.classList.contains("show"))
+            if (c && c.classList.contains("show")) {
               bootstrap.Collapse.getInstance(c)?.hide();
+            }
           }
         });
       });
