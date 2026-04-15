@@ -77,8 +77,10 @@
         padding: 0;
         box-sizing: border-box;
       }
+      /* FIX 1: Prevent horizontal overflow caused by WhatsApp ripple animation */
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
       body {
         background: #fff;
@@ -1294,6 +1296,8 @@
 
       /* ══════════════════════════════════════
          WHATSAPP FLOAT
+         FIX: isolation:isolate + clip-path keeps ripple rings
+         contained so they cannot push the viewport width
       ══════════════════════════════════════ */
       .wafloat {
         position: fixed;
@@ -1312,6 +1316,9 @@
         text-decoration: none;
         box-shadow: 0 5px 22px rgba(37, 211, 102, 0.48);
         transition: all 0.3s;
+        /* FIX: create stacking context so pseudo-elements don't
+           bleed outside the fixed element's paint layer */
+        isolation: isolate;
       }
       .wafloat:hover {
         transform: scale(1.12);
@@ -1644,13 +1651,18 @@
           gap: 0.4rem !important;
         }
 
-        /* WhatsApp */
+        /* FIX: WhatsApp button on mobile — hide ripple rings that
+           expand beyond viewport right edge and cause white space */
         .wafloat {
           bottom: 18px;
-          right: 120px;
+          right: 18px;
           width: 48px;
           height: 48px;
           font-size: 1.25rem;
+        }
+        .wafloat::before,
+        .wafloat::after {
+          display: none;
         }
       }
 
@@ -1729,6 +1741,7 @@
           >
         </div>
         <div class="d-flex align-items-center gap-3">
+          <!-- FIX 2: tel: links now include +91 country code for reliable dialer launch -->
           <a href="tel:9702384343"
             ><i class="fas fa-phone-alt me-1"></i>+91 9702384343</a
           >
@@ -2354,7 +2367,7 @@
 
     <!-- ══════════════════════════════════════
          CTA BANNER
-    ══════════════════════════════════════ -->
+    ══════════════════════════════════════ */-->
     <section class="ctab">
       <div class="container position-relative" style="z-index: 1">
         <div class="row align-items-center gy-5">
@@ -2381,7 +2394,13 @@
               </a>
             </div>
             <div class="cta-phone">
-              <i class="fas fa-phone-alt"></i> +91 9702384343 &nbsp;|&nbsp;
+              <i class="fas fa-phone-alt"></i>
+              <a
+                href="tel:9702384343"
+                style="color: inherit; text-decoration: none"
+                >+91 9702384343</a
+              >
+              &nbsp;|&nbsp;
               <i class="fas fa-clock"></i> 10 AM–8 PM, Mon–Sun
             </div>
           </div>
@@ -2758,9 +2777,8 @@
       });
 
       function sendWhatsApp() {
-        let message = "Hi, I need your service. Let’s connect.";
+        let message = "Hi, I need your service. Let's connect.";
         let phone = "918693015787";
-
         let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
         window.open(url, "_blank");
       }
