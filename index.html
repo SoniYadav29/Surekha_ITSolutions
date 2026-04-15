@@ -433,13 +433,6 @@
         flex-wrap: wrap;
         margin-bottom: 2.2rem;
       }
-
-      .hero-social-proof {
-        display: flex;
-        align-items: center;
-        gap: 1.1rem;
-        flex-wrap: wrap;
-      }
       .proof-avatars {
         display: flex;
       }
@@ -833,7 +826,7 @@
       .exp-badge {
         position: absolute;
         bottom: -18px;
-        right: -80px;
+        right: -108px;
         background: var(--blue);
         color: #fff;
         border-radius: 14px;
@@ -1475,11 +1468,6 @@
         .hchk {
           font-size: 0.8rem;
         }
-        .hero-social-proof {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0.75rem;
-        }
         .proof-div {
           display: none;
         }
@@ -1659,7 +1647,7 @@
         /* WhatsApp */
         .wafloat {
           bottom: 18px;
-          right: 16px;
+          right: 120px;
           width: 48px;
           height: 48px;
           font-size: 1.25rem;
@@ -1869,27 +1857,6 @@
                 <i class="fab fa-whatsapp" style="font-size: 1.05rem"></i> Chat
                 on WhatsApp
               </a>
-            </div>
-            <div class="hero-social-proof">
-              <div class="proof-avatars">
-                <div class="pavatar" style="background: var(--blue)">AK</div>
-                <div class="pavatar" style="background: var(--orange)">RM</div>
-                <div class="pavatar" style="background: #1bae5c">SP</div>
-                <div class="pavatar" style="background: #9b59b6">JD</div>
-              </div>
-              <div>
-                <div class="stars-row">★★★★★</div>
-                <div class="proof-text">
-                  <strong>500+ Happy Clients</strong> across Mumbai
-                </div>
-              </div>
-              <div class="proof-div"></div>
-              <div>
-                <div class="stars-row">★★★★★</div>
-                <div class="proof-text">
-                  <strong>4.9/5.0</strong> avg rating
-                </div>
-              </div>
             </div>
           </div>
 
@@ -2721,12 +2688,7 @@
         duration: 0.65,
         delay: 0.9,
       });
-      gsap.from(".hero-social-proof", {
-        opacity: 0,
-        y: 14,
-        duration: 0.65,
-        delay: 1.05,
-      });
+
       gsap.from(".hero-card-wrap", {
         opacity: 0,
         x: 45,
