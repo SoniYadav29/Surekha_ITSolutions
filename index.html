@@ -701,7 +701,7 @@
          SERVICES
       ══════════════════════════════════════ */
       .services {
-        background: #fff;
+        background: var(--grey-light);
       }
       .svc {
         background: #fff;
@@ -787,7 +787,7 @@
          ABOUT
       ══════════════════════════════════════ */
       .about {
-        background: var(--grey-light);
+        background: white;
       }
       .about-img-grid {
         background: linear-gradient(135deg, var(--blue-light), #dde8ff);
@@ -1742,12 +1742,12 @@
         </div>
         <div class="d-flex align-items-center gap-3">
           <!-- FIX 2: tel: links now include +91 country code for reliable dialer launch -->
-          <a href="tel:9702384343"
-            ><i class="fas fa-phone-alt me-1"></i>+91 9702384343</a
-          >
-          <span>/</span>
           <a href="tel:8779394672"
             ><i class="fas fa-phone-alt me-1"></i>+91 8779394672</a
+          >
+          <span>/</span>
+          <a href="tel:9702384343"
+            ><i class="fas fa-phone-alt me-1"></i>+91 9702384343</a
           >
         </div>
       </div>
@@ -1781,27 +1781,34 @@
         </button>
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
+              <a class="nav-link" href="index.html#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="index.html#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#why-us">Why Us</a>
+              <a class="nav-link active" href="services.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="index.html#why-us">Why Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">Contact</a>
             </li>
             <li class="nav-item ms-lg-3">
-              <a class="nav-link btn-nav-cta" href="#contact">Book Service</a>
+              <a class="nav-link btn-nav-cta" href="index.html#contact"
+                ><i
+                  class="fas fa-calendar-check"
+                  style="font-size: 0.78rem"
+                ></i>
+                Book Service</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
     <!-- ══════════════════════════════════════
          HERO
     ══════════════════════════════════════ -->
@@ -2041,6 +2048,77 @@
         </div>
       </div>
     </div>
+    <!-- ══════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════ -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
+            <div style="position: relative; max-width: 420px">
+              <div class="shape-ring"></div>
+              <div class="about-img-grid">
+                <div class="amic">
+                  <i class="fas fa-laptop-code" style="color: var(--blue)"></i
+                  ><span>Laptop Repair</span>
+                </div>
+                <div class="amic">
+                  <i class="fas fa-home" style="color: var(--blue)"></i
+                  ><span>Doorstep</span>
+                </div>
+                <div class="amic">
+                  <i class="fas fa-database" style="color: var(--blue)"></i
+                  ><span>Data Recovery</span>
+                </div>
+                <div class="amic">
+                  <i class="fas fa-shield-alt" style="color: var(--blue)"></i
+                  ><span>Data Secure</span>
+                </div>
+                <div class="amic">
+                  <i class="fas fa-wifi" style="color: var(--blue)"></i
+                  ><span>Networking</span>
+                </div>
+                <div class="amic">
+                  <i class="fas fa-clock" style="color: var(--blue)"></i
+                  ><span>Quick Support</span>
+                </div>
+              </div>
+              <div class="exp-badge">
+                <span class="en">10+</span>
+                <span class="el">Years of Excellence</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-7 ps-lg-5"
+            data-aos="fade-left"
+            data-aos-duration="900"
+          >
+            <div class="stag"><span class="sl"></span> About Company</div>
+            <h2 class="stitle">
+              Navigating Tech Horizons<br /><span>Together in Mumbai</span>
+            </h2>
+            <p
+              style="
+                color: var(--grey);
+                line-height: 1.85;
+                margin: 1.1rem 0 1.4rem;
+                font-size: 0.95rem;
+              "
+            >
+              Surekha IT Solutions is a trusted computer repair and IT service
+              provider in Andheri-East, Mumbai. We specialize in laptop and
+              desktop repair, data recovery, and hardware solutions. Our goal is
+              to provide fast, reliable, and affordable services to our
+              customers.<br /><br />
+              Surekha IT Solutions has been a trusted partner for hundreds of
+              homes and businesses — professional, affordable, doorstep IT
+              services you can rely on.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ══════════════════════════════════════
          SERVICES
@@ -2206,78 +2284,6 @@
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         ABOUT
-    ══════════════════════════════════════ -->
-    <section class="about" id="about">
-      <div class="container">
-        <div class="row align-items-center gy-5">
-          <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
-            <div style="position: relative; max-width: 420px">
-              <div class="shape-ring"></div>
-              <div class="about-img-grid">
-                <div class="amic">
-                  <i class="fas fa-laptop-code" style="color: var(--blue)"></i
-                  ><span>Laptop Repair</span>
-                </div>
-                <div class="amic">
-                  <i class="fas fa-home" style="color: var(--blue)"></i
-                  ><span>Doorstep</span>
-                </div>
-                <div class="amic">
-                  <i class="fas fa-database" style="color: var(--blue)"></i
-                  ><span>Data Recovery</span>
-                </div>
-                <div class="amic">
-                  <i class="fas fa-shield-alt" style="color: var(--blue)"></i
-                  ><span>Data Secure</span>
-                </div>
-                <div class="amic">
-                  <i class="fas fa-wifi" style="color: var(--blue)"></i
-                  ><span>Networking</span>
-                </div>
-                <div class="amic">
-                  <i class="fas fa-clock" style="color: var(--blue)"></i
-                  ><span>Quick Support</span>
-                </div>
-              </div>
-              <div class="exp-badge">
-                <span class="en">10+</span>
-                <span class="el">Years of Excellence</span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-lg-7 ps-lg-5"
-            data-aos="fade-left"
-            data-aos-duration="900"
-          >
-            <div class="stag"><span class="sl"></span> About Company</div>
-            <h2 class="stitle">
-              Navigating Tech Horizons<br /><span>Together in Mumbai</span>
-            </h2>
-            <p
-              style="
-                color: var(--grey);
-                line-height: 1.85;
-                margin: 1.1rem 0 1.4rem;
-                font-size: 0.95rem;
-              "
-            >
-              Surekha IT Solutions is a trusted computer repair and IT service
-              provider in Andheri-East, Mumbai. We specialize in laptop and
-              desktop repair, data recovery, and hardware solutions. Our goal is
-              to provide fast, reliable, and affordable services to our
-              customers.<br /><br />
-              Surekha IT Solutions has been a trusted partner for hundreds of
-              homes and businesses — professional, affordable, doorstep IT
-              services you can rely on.
-            </p>
           </div>
         </div>
       </div>
@@ -2524,6 +2530,15 @@
                   </div>
                 </div>
               </div>
+              <div class="cirow p-0 pt-3 flex-column align-items-start">
+                <div class="qr-box">
+                  <img
+                    src="assets/images/qr-code.png"
+                    class="w-75"
+                    alt="WhatsApp QR Code"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -2604,7 +2619,7 @@
                     <textarea
                       class="form-control"
                       id="bMsg"
-                      rows="3"
+                      rows="7"
                       placeholder="Briefly describe your tech issue..."
                     ></textarea>
                   </div>
@@ -2756,7 +2771,7 @@
             const msg = encodeURIComponent(
               `Hi Surekha IT Solutions!\n\nName: ${n}\nPhone: ${p}\nService: ${s}\nArea: ${document.getElementById("bAddr").value}\n\nPlease confirm my booking.`,
             );
-            window.open(`https://wa.me/919702384343?text=${msg}`, "_blank");
+            window.open(`https://wa.me/918779394672?text=${msg}`, "_blank");
           }, 1200);
         });
 
@@ -2778,7 +2793,7 @@
 
       function sendWhatsApp() {
         let message = "Hi, I need your service. Let's connect.";
-        let phone = "919702384343";
+        let phone = "918779394672";
         let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
         window.open(url, "_blank");
       }
