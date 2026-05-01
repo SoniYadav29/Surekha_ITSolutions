@@ -41,13 +41,13 @@
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Surekha IT Solutions" />
 
-    <!-- ══ GEO TAGS (helps local search) ══ -->
+    <!-- ══ GEO TAGS ══ -->
     <meta name="geo.region" content="IN-MH" />
     <meta name="geo.placename" content="Andheri, Mumbai, Maharashtra" />
     <meta name="geo.position" content="19.1136;72.8697" />
     <meta name="ICBM" content="19.1136, 72.8697" />
 
-    <!-- ══ OPEN GRAPH (Facebook / WhatsApp previews) ══ -->
+    <!-- ══ OPEN GRAPH ══ -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.surekhaitsolutions.com/" />
     <meta
@@ -80,7 +80,7 @@
       content="https://www.surekhaitsolutions.com/assets/images/logo.jpeg"
     />
 
-    <!-- ══ LOCAL BUSINESS SCHEMA (JSON-LD) ══ -->
+    <!-- ══ LOCAL BUSINESS SCHEMA ══ -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -114,65 +114,16 @@
             "Wednesday",
             "Thursday",
             "Friday",
-            "Saturday",
-            "Sunday"
+            "Saturday"
           ],
           "opens": "10:00",
           "closes": "20:00"
         },
-        "sameAs": ["https://wa.me/918779394672"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "IT Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Laptop Repair Mumbai"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Desktop Repair Mumbai"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Data Recovery Mumbai"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "OS Installation Mumbai"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "CCTV Installation Mumbai"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Networking Setup Mumbai"
-              }
-            }
-          ]
-        }
+        "sameAs": ["https://wa.me/918779394672"]
       }
     </script>
 
-    <!-- ══ FAQ SCHEMA (helps appear in Google "People Also Ask") ══ -->
+    <!-- ══ FAQ SCHEMA ══ -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -241,6 +192,361 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- ══ IMAGE CARD & REVIEW STYLES ══ -->
+    <style>
+      /* ── Services Image Cards ── */
+      .svc-img-card {
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+        border: 1.5px solid #e8edf8;
+        box-shadow: 0 4px 24px rgba(27, 91, 255, 0.07);
+        transition:
+          transform 0.35s cubic-bezier(0.22, 0.68, 0, 1.2),
+          box-shadow 0.35s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .svc-img-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 16px 48px rgba(27, 91, 255, 0.14);
+      }
+      .svc-img-wrap {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+      .svc-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .svc-img-card:hover .svc-img-wrap img {
+        transform: scale(1.07);
+      }
+      .svc-img-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(27, 91, 255, 0) 40%,
+          rgba(27, 91, 255, 0.55) 100%
+        );
+      }
+      .svc-img-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(6px);
+        border-radius: 50px;
+        padding: 5px 14px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--blue, #1b5bff);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 2px 12px rgba(27, 91, 255, 0.12);
+      }
+      .svc-img-body {
+        padding: 1.3rem 1.4rem 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .svc-img-body h3 {
+        font-size: 1.04rem;
+        font-weight: 800;
+        color: #1a2340;
+        margin-bottom: 0.55rem;
+      }
+      .svc-img-body p {
+        font-size: 0.86rem;
+        color: #6b7a99;
+        line-height: 1.7;
+        flex: 1;
+        margin-bottom: 1.1rem;
+      }
+      .svc-img-lnk {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--blue, #1b5bff);
+        text-decoration: none;
+        padding: 0.48rem 1.1rem;
+        border: 1.5px solid rgba(27, 91, 255, 0.2);
+        border-radius: 50px;
+        transition: all 0.25s;
+        align-self: flex-start;
+      }
+      .svc-img-lnk:hover {
+        background: var(--blue, #1b5bff);
+        color: #fff;
+        border-color: transparent;
+      }
+      /* ── Why Us Image Cards ── */
+      .wyc-img {
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+        border: 1.5px solid #e8edf8;
+        box-shadow: 0 4px 20px rgba(27, 91, 255, 0.06);
+        transition:
+          transform 0.35s cubic-bezier(0.22, 0.68, 0, 1.2),
+          box-shadow 0.35s ease;
+        height: 100%;
+      }
+      .wyc-img:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 44px rgba(27, 91, 255, 0.13);
+      }
+      .wyc-img-top {
+        position: relative;
+        height: 170px;
+        overflow: hidden;
+      }
+      .wyc-img-top img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .wyc-img:hover .wyc-img-top img {
+        transform: scale(1.06);
+      }
+      .wyc-img-top-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(27, 91, 255, 0.45) 0%,
+          rgba(255, 107, 44, 0.25) 100%
+        );
+      }
+      .wyc-num {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 34px;
+        height: 34px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 900;
+        color: var(--blue, #1b5bff);
+      }
+      .wyc-img-body {
+        padding: 1.1rem 1.3rem 1.3rem;
+      }
+      .wyc-img-body h4 {
+        font-size: 0.97rem;
+        font-weight: 800;
+        color: #1a2340;
+        margin-bottom: 0.4rem;
+      }
+      .wyc-img-body p {
+        font-size: 0.84rem;
+        color: #6b7a99;
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* ── Reviews Section ── */
+      .reviews-section {
+        padding: 90px 0;
+        background: #f0f4ff;
+        position: relative;
+        overflow: hidden;
+      }
+      .reviews-section::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        left: -80px;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(
+          circle,
+          rgba(27, 91, 255, 0.08) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .reviews-section::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        right: -60px;
+        width: 260px;
+        height: 260px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 107, 44, 0.07) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .review-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 1.8rem 1.6rem;
+        border: 1.5px solid #e4ecff;
+        box-shadow: 0 6px 28px rgba(27, 91, 255, 0.08);
+        height: 100%;
+        position: relative;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 48px rgba(27, 91, 255, 0.13);
+      }
+      .review-quote {
+        position: absolute;
+        top: -14px;
+        left: 22px;
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #1b5bff, #3d78ff);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.82rem;
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(27, 91, 255, 0.3);
+      }
+      .review-stars {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 1rem;
+      }
+      .review-stars i {
+        color: #ffba57;
+        font-size: 0.88rem;
+      }
+      .review-text {
+        font-size: 0.9rem;
+        color: #4a5470;
+        line-height: 1.78;
+        margin-bottom: 1.4rem;
+        font-style: italic;
+      }
+      .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .review-avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2.5px solid #e4ecff;
+      }
+      .review-avatar-fallback {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1b5bff, #3d78ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #fff;
+        flex-shrink: 0;
+        border: 2.5px solid #e4ecff;
+      }
+      .review-name {
+        font-size: 0.92rem;
+        font-weight: 800;
+        color: #1a2340;
+        margin-bottom: 2px;
+      }
+      .review-loc {
+        font-size: 0.78rem;
+        color: #9aa3bd;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .review-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: #edf2ff;
+        color: #1b5bff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 50px;
+        margin-bottom: 0.85rem;
+      }
+      .reviews-summary {
+        background: linear-gradient(135deg, #1b5bff, #0d3fc9);
+        border-radius: 20px;
+        padding: 2.2rem 2rem;
+        color: #fff;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 12px 40px rgba(27, 91, 255, 0.3);
+      }
+      .reviews-summary .big-num {
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 0.3rem;
+      }
+      .reviews-summary .big-stars {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        margin: 0.6rem 0 1rem;
+      }
+      .reviews-summary .big-stars i {
+        color: #ffba57;
+        font-size: 1.1rem;
+      }
+      .reviews-summary p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* ── Need Help card override ── */
+      .svc-need-help {
+        background: linear-gradient(
+          135deg,
+          var(--blue, #1b5bff),
+          var(--blue-dark, #0d3fc9)
+        );
+        border-radius: 18px;
+        border: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1.6rem;
+        box-shadow: 0 12px 40px rgba(27, 91, 255, 0.28);
+      }
+    </style>
   </head>
 
   <body>
@@ -257,8 +563,8 @@
             >Andheri, Mumbai, Maharashtra</span
           >
           <span
-            ><i class="fas fa-clock me-1" style="color: #7b9bff"></i>Mon–Sun: 10
-            AM – 8 PM</span
+            ><i class="fas fa-clock me-1" style="color: #7b9bff"></i>Mon–Sat: 10
+            AM – 7 PM</span
           >
         </div>
         <div class="d-flex align-items-center gap-3">
@@ -345,10 +651,8 @@
         </pattern>
         <rect width="95" height="95" fill="url(#p2)" />
       </svg>
-
       <div class="container py-4">
         <div class="row align-items-center gy-5">
-          <!-- Left: Copy -->
           <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
             <div class="eyebrow-tag">
               <div class="eline"></div>
@@ -397,8 +701,6 @@
               </a>
             </div>
           </div>
-
-          <!-- Right: Card -->
           <div
             class="col-lg-6 d-flex justify-content-center"
             data-aos="fade-left"
@@ -490,7 +792,7 @@
                       font-weight: 700;
                       color: var(--grey);
                     "
-                    >10 AM–8 PM Daily</span
+                    >10 AM – 7 PM Daily</span
                   >
                 </div>
               </div>
@@ -534,7 +836,6 @@
         <div class="bpill">
           <i class="fas fa-bolt" style="color: var(--blue)"></i>Same Day Service
         </div>
-        <!-- Duplicated for seamless loop -->
         <div class="bpill">
           <i class="fas fa-laptop" style="color: var(--blue)"></i>Laptop &
           Desktop Repair
@@ -603,8 +904,8 @@
                 </div>
               </div>
               <div class="exp-badge">
-                <span class="en">10+</span>
-                <span class="el">Years of Excellence</span>
+                <span class="en">10+</span
+                ><span class="el">Years of Excellence</span>
               </div>
             </div>
           </div>
@@ -640,7 +941,7 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         SERVICES
+         SERVICES  (Image Cards)
     ══════════════════════════════════════ -->
     <section class="services" id="services">
       <div class="container">
@@ -659,141 +960,193 @@
           </div>
         </div>
         <div class="row g-4">
+          <!-- Card 1: Laptop & Desktop Repair -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-            <div class="svc">
-              <div class="svc-ic"><i class="fas fa-laptop-code"></i></div>
-              <h3>Laptop & Desktop Repair</h3>
-              <p>
-                Complete hardware diagnosis, screen replacement, motherboard
-                repair, keyboard fix, and performance optimization for all major
-                brands.
-              </p>
-              <a href="#contact" class="svc-lnk"
-                >Book Now <i class="fas fa-arrow-right"></i
-              ></a>
+            <div class="svc-img-card">
+              <div class="svc-img-wrap">
+                <img
+                  src="assets/images/laptop-desktop-repair.jpg"
+                  alt="Laptop Repair Mumbai"
+                  loading="lazy"
+                />
+                <div class="svc-img-overlay"></div>
+                <div class="svc-img-badge">
+                  <i class="fas fa-laptop"></i> Hardware
+                </div>
+              </div>
+              <div class="svc-img-body">
+                <h3>Laptop & Desktop Repair</h3>
+                <p>
+                  Complete hardware diagnosis, screen replacement, motherboard
+                  repair, keyboard fix, and performance optimization for all
+                  major brands.
+                </p>
+                <a href="#contact" class="svc-img-lnk"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
           </div>
+
+          <!-- Card 2: OS Installation -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
-            <div class="svc">
-              <div class="svc-ic"><i class="fas fa-compact-disc"></i></div>
-              <h3>OS Installation</h3>
-              <p>
-                Clean Windows 10/11 & Linux installation, driver setup, software
-                configuration, and system optimization for peak performance.
-              </p>
-              <a href="#contact" class="svc-lnk"
-                >Book Now <i class="fas fa-arrow-right"></i
-              ></a>
+            <div class="svc-img-card">
+              <div class="svc-img-wrap">
+                <img
+                  src="assets/images/os_Installation.jpg"
+                  alt="OS Installation Mumbai"
+                  loading="lazy"
+                />
+                <div class="svc-img-overlay"></div>
+                <div class="svc-img-badge">
+                  <i class="fas fa-compact-disc"></i> Software
+                </div>
+              </div>
+              <div class="svc-img-body">
+                <h3>OS Installation</h3>
+                <p>
+                  Clean Windows 10/11 & Linux installation, driver setup,
+                  software configuration, and system optimization for peak
+                  performance.
+                </p>
+                <a href="#contact" class="svc-img-lnk"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
           </div>
+
+          <!-- Card 3: Data Recovery -->
           <div
             class="col-md-6 col-lg-4"
             data-aos="fade-up"
             data-aos-delay="160"
           >
-            <div class="svc">
-              <div class="svc-ic"><i class="fas fa-database"></i></div>
-              <h3>Data Recovery</h3>
-              <p>
-                Recovery from crashed drives, formatted disks, corrupted USBs
-                and memory cards. Industry-leading 98% success rate guaranteed.
-              </p>
-              <a href="#contact" class="svc-lnk"
-                >Book Now <i class="fas fa-arrow-right"></i
-              ></a>
+            <div class="svc-img-card">
+              <div class="svc-img-wrap">
+                <img
+                  src="assets/images/data-recovery.jpg"
+                  alt="Data Recovery Mumbai"
+                  loading="lazy"
+                />
+                <div class="svc-img-overlay"></div>
+                <div class="svc-img-badge">
+                  <i class="fas fa-database"></i> Recovery
+                </div>
+              </div>
+              <div class="svc-img-body">
+                <h3>Data Recovery</h3>
+                <p>
+                  Recovery from crashed drives, formatted disks, corrupted USBs
+                  and memory cards. Industry-leading 98% success rate
+                  guaranteed.
+                </p>
+                <a href="#contact" class="svc-img-lnk"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
           </div>
+
+          <!-- Card 4: Networking -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-            <div class="svc">
-              <div class="svc-ic"><i class="fas fa-network-wired"></i></div>
-              <h3>Networking Support</h3>
-              <p>
-                Home & office network setup, WiFi troubleshooting, LAN cabling,
-                router configuration, and internet speed optimization.
-              </p>
-              <a href="#contact" class="svc-lnk"
-                >Book Now <i class="fas fa-arrow-right"></i
-              ></a>
+            <div class="svc-img-card">
+              <div class="svc-img-wrap">
+                <img
+                  src="assets/images/networking-support.jpg"
+                  alt="Networking Setup Mumbai"
+                  loading="lazy"
+                />
+                <div class="svc-img-overlay"></div>
+                <div class="svc-img-badge">
+                  <i class="fas fa-wifi"></i> Network
+                </div>
+              </div>
+              <div class="svc-img-body">
+                <h3>Networking Support</h3>
+                <p>
+                  Home & office network setup, WiFi troubleshooting, LAN
+                  cabling, router configuration, and internet speed
+                  optimization.
+                </p>
+                <a href="#contact" class="svc-img-lnk"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
           </div>
+
+          <!-- Card 5: CCTV -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
-            <div class="svc">
-              <div class="svc-ic"><i class="fas fa-video"></i></div>
-              <h3>CCTV Installation</h3>
-              <p>
-                End-to-end CCTV setup for homes & businesses — IP cameras,
-                DVR/NVR, remote monitoring and annual maintenance included.
-              </p>
-              <a href="#contact" class="svc-lnk"
-                >Book Now <i class="fas fa-arrow-right"></i
-              ></a>
+            <div class="svc-img-card">
+              <div class="svc-img-wrap">
+                <img
+                  src="assets/images/cctv-installation.jpg"
+                  alt="CCTV Installation Mumbai"
+                  loading="lazy"
+                />
+                <div class="svc-img-overlay"></div>
+                <div class="svc-img-badge">
+                  <i class="fas fa-video"></i> Security
+                </div>
+              </div>
+              <div class="svc-img-body">
+                <h3>CCTV Installation</h3>
+                <p>
+                  End-to-end CCTV setup for homes & businesses — IP cameras,
+                  DVR/NVR, remote monitoring and annual maintenance included.
+                </p>
+                <a href="#contact" class="svc-img-lnk"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
           </div>
+
+          <!-- Card 6: Need Help CTA -->
           <div
             class="col-md-6 col-lg-4"
             data-aos="fade-up"
             data-aos-delay="160"
           >
-            <div
-              class="svc"
-              style="
-                background: linear-gradient(
-                  135deg,
-                  var(--blue),
-                  var(--blue-dark)
-                );
-                border-color: transparent;
-              "
-            >
-              <div
+            <div class="svc-need-help">
+              <i
+                class="fas fa-headset"
                 style="
-                  display: flex;
-                  flex-direction: column;
-                  height: 100%;
-                  min-height: 210px;
-                  justify-content: center;
+                  font-size: 2.3rem;
+                  color: rgba(255, 255, 255, 0.7);
+                  margin-bottom: 0.9rem;
+                "
+              ></i>
+              <h3 style="color: #fff; margin-bottom: 0.6rem">Need Help Now?</h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.72);
+                  margin-bottom: 1.4rem;
+                  font-size: 0.86rem;
                 "
               >
-                <i
-                  class="fas fa-headset"
-                  style="
-                    font-size: 2.3rem;
-                    color: rgba(255, 255, 255, 0.7);
-                    margin-bottom: 0.9rem;
-                  "
-                ></i>
-                <h3 style="color: #fff; margin-bottom: 0.6rem">
-                  Need Help Now?
-                </h3>
-                <p
-                  style="
-                    color: rgba(255, 255, 255, 0.72);
-                    margin-bottom: 1.4rem;
-                    font-size: 0.86rem;
-                  "
-                >
-                  We respond in 30 minutes. Call or WhatsApp us directly.
-                </p>
-                <a
-                  href="tel:8779394672"
-                  style="
-                    background: #fff;
-                    color: var(--blue);
-                    padding: 0.58rem 1.3rem;
-                    border-radius: 50px;
-                    font-weight: 700;
-                    font-size: 0.83rem;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.45rem;
-                    text-decoration: none;
-                    transition: all 0.3s;
-                    align-self: flex-start;
-                  "
-                >
-                  <i class="fas fa-phone-alt"></i> 8779394672
-                </a>
-              </div>
+                We respond in 30 minutes. Call or WhatsApp us directly.
+              </p>
+              <a
+                href="tel:8779394672"
+                style="
+                  background: #fff;
+                  color: var(--blue);
+                  padding: 0.58rem 1.3rem;
+                  border-radius: 50px;
+                  font-weight: 700;
+                  font-size: 0.83rem;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.45rem;
+                  text-decoration: none;
+                  transition: all 0.3s;
+                  align-self: flex-start;
+                "
+              >
+                <i class="fas fa-phone-alt"></i> 8779394672
+              </a>
             </div>
           </div>
         </div>
@@ -801,7 +1154,7 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         WHY US
+         WHY US  (Image Cards)
     ══════════════════════════════════════ -->
     <section class="why" id="why-us">
       <div class="container">
@@ -818,64 +1171,129 @@
           </p>
         </div>
         <div class="row g-4">
+          <!-- Card 1: Doorstep -->
           <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-            <div class="wyc">
-              <div class="wy-ic"><i class="fas fa-home"></i></div>
-              <h4>Doorstep Service</h4>
-              <p>
-                We come to you. No travel needed — book and relax at home or
-                office.
-              </p>
+            <div class="wyc-img">
+              <div class="wyc-img-top">
+                <img
+                  src="assets/images/doorstep-service.jpg"
+                  alt="Doorstep IT Service Mumbai"
+                  loading="lazy"
+                />
+                <div class="wyc-img-top-overlay"></div>
+              </div>
+              <div class="wyc-img-body">
+                <h4>Doorstep Service</h4>
+                <p>
+                  We come to you. No travel needed — book and relax at home or
+                  office.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Card 2: Expert Technicians -->
           <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
-            <div class="wyc">
-              <div class="wy-ic"><i class="fas fa-user-tie"></i></div>
-              <h4>Expert Technicians</h4>
-              <p>
-                Certified professionals with 10+ years of experience on all
-                brands and models.
-              </p>
+            <div class="wyc-img">
+              <div class="wyc-img-top">
+                <img
+                  src="assets/images/expert-technicians.jpg"
+                  alt="Expert IT Technician Mumbai"
+                  loading="lazy"
+                />
+                <div class="wyc-img-top-overlay"></div>
+              </div>
+              <div class="wyc-img-body">
+                <h4>Expert Technicians</h4>
+                <p>
+                  Certified professionals with 10+ years of experience on all
+                  brands and models.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Card 3: Affordable Pricing -->
           <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-            <div class="wyc">
-              <div class="wy-ic"><i class="fas fa-tags"></i></div>
-              <h4>Affordable Pricing</h4>
-              <p>
-                Transparent pricing with no hidden costs. Premium quality at
-                fair rates.
-              </p>
+            <div class="wyc-img">
+              <div class="wyc-img-top">
+                <img
+                  src="assets/images/affordable-pricing.jpg"
+                  alt="Affordable IT Pricing"
+                  loading="lazy"
+                />
+                <div class="wyc-img-top-overlay"></div>
+              </div>
+              <div class="wyc-img-body">
+                <h4>Affordable Pricing</h4>
+                <p>
+                  Transparent pricing with no hidden costs. Premium quality at
+                  fair rates.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Card 4: Quick Response -->
           <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-            <div class="wyc">
-              <div class="wy-ic"><i class="fas fa-bolt"></i></div>
-              <h4>Quick Response</h4>
-              <p>
-                We reply in 30 minutes and aim for same-day arrival at your
-                location.
-              </p>
+            <div class="wyc-img">
+              <div class="wyc-img-top">
+                <img
+                  src="assets/images/quick-response.jpg"
+                  alt="Quick IT Response"
+                  loading="lazy"
+                />
+                <div class="wyc-img-top-overlay"></div>
+              </div>
+              <div class="wyc-img-body">
+                <h4>Quick Response</h4>
+                <p>
+                  We reply in 30 minutes and aim for same-day arrival at your
+                  location.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Card 5: Customer Satisfaction -->
           <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
-            <div class="wyc">
-              <div class="wy-ic"><i class="fas fa-heart"></i></div>
-              <h4>Customer Satisfaction</h4>
-              <p>
-                We aren't done until you're completely satisfied. Your happiness
-                is our mission.
-              </p>
+            <div class="wyc-img">
+              <div class="wyc-img-top">
+                <img
+                  src="assets/images/cutomer-satisfaction.jpg"
+                  alt="Customer Satisfaction IT Service"
+                  loading="lazy"
+                />
+                <div class="wyc-img-top-overlay"></div>
+              </div>
+              <div class="wyc-img-body">
+                <h4>Customer Satisfaction</h4>
+                <p>
+                  We aren't done until you're completely satisfied. Your
+                  happiness is our mission.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Card 6: Data Security -->
           <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-            <div class="wyc">
-              <div class="wy-ic"><i class="fas fa-lock"></i></div>
-              <h4>Data Security</h4>
-              <p>
-                Strict confidentiality across every service. Your data stays
-                private always.
-              </p>
+            <div class="wyc-img">
+              <div class="wyc-img-top">
+                <img
+                  src="assets/images/data-security.jpg"
+                  alt="Data Security IT"
+                  loading="lazy"
+                />
+                <div class="wyc-img-top-overlay"></div>
+              </div>
+              <div class="wyc-img-body">
+                <h4>Data Security</h4>
+                <p>
+                  Strict confidentiality across every service. Your data stays
+                  private always.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -883,7 +1301,151 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         FAQ SECTION (NEW — helps Google rankings)
+         CUSTOMER REVIEWS  (NEW SECTION)
+    ══════════════════════════════════════ -->
+    <section class="reviews-section" id="reviews">
+      <div class="container" style="position: relative; z-index: 1">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="stag justify-content-center">
+            <span class="sl"></span> Customer Reviews <span class="sl"></span>
+          </div>
+          <h2 class="stitle">What Mumbai Says About <span>Us</span></h2>
+          <p class="sdesc mx-auto">
+            Real customers, real experiences. See why hundreds of Mumbaikars
+            trust us for their IT needs.
+          </p>
+        </div>
+
+        <div class="bg-light">
+          <div class="container py-5">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div
+                  id="testimonialCarousel"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="testimonial-card p-4 p-md-5">
+                        <i
+                          class="bi bi-quote quote-icon position-absolute top-0 start-0 mt-3 ms-3"
+                        ></i>
+                        <div class="text-center mb-4">
+                          <img
+                            src="assets/images/female.jpg"
+                            alt="Avatar"
+                            class="avatar mb-3"
+                          />
+                          <h5 class="mb-1">Divya Nair</h5>
+                        </div>
+                        <p class="lead text-center mb-0">
+                          "My Dell laptop keyboard stopped working completely.
+                          Called at 11am, technician arrived by 1pm, keyboard
+                          replaced by 3pm. I was working again the same day!
+                          Best doorstep IT service in Mumbai."
+                        </p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="testimonial-card p-4 p-md-5">
+                        <i
+                          class="bi bi-quote quote-icon position-absolute top-0 start-0 mt-3 ms-3"
+                        ></i>
+                        <div class="text-center mb-4">
+                          <img
+                            src="assets/images/male.jpg"
+                            alt="Avatar"
+                            class="avatar mb-3"
+                          />
+                          <h5 class="mb-1">Amit Kulkarni</h5>
+                        </div>
+                        <p class="lead text-center mb-0">
+                          "I had lost 5 years of photos when my hard drive
+                          crashed. Thought everything was gone forever. Surekha
+                          IT recovered my data! I'm so grateful. Truly
+                          professional and trustworthy team."
+                        </p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="testimonial-card p-4 p-md-5">
+                        <i
+                          class="bi bi-quote quote-icon position-absolute top-0 start-0 mt-3 ms-3"
+                        ></i>
+                        <div class="text-center mb-4">
+                          <img
+                            src="assets/images/female.jpg"
+                            alt="Avatar"
+                            class="avatar mb-3"
+                          />
+                          <h5 class="mb-1">Neha Joshi</h5>
+                        </div>
+                        <p class="lead text-center mb-0">
+                          "Our office WiFi was terrible with dead zones
+                          everywhere. Surekha IT Solutions fixed the entire
+                          network setup in one visit. Internet speed is now
+                          consistent across all floors. Highly satisfied!"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#testimonialCarousel"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#testimonialCarousel"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#testimonialCarousel"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FAQ SECTION
     ══════════════════════════════════════ -->
     <section class="why" id="faq" style="background: #f8faff">
       <div class="container">
@@ -1056,7 +1618,7 @@
                 >+91 9702384343</a
               >
               &nbsp;|&nbsp;
-              <i class="fas fa-clock"></i> 10 AM–8 PM, Mon–Sun
+              <i class="fas fa-clock"></i> 10 AM – 7 PM, Mon – Sat
             </div>
           </div>
           <div class="col-lg-5 cta-visual" data-aos="fade-left">
@@ -1112,7 +1674,6 @@
           <h2 class="stitle">Book Your <span>Service Today</span></h2>
         </div>
         <div class="row g-4">
-          <!-- Info -->
           <div class="col-lg-4" data-aos="fade-right">
             <div class="ccard">
               <h5
@@ -1159,8 +1720,8 @@
                 </div>
                 <div>
                   <div class="cilbl">Working Hours</div>
-                  <div class="cival">10:00 AM – 8:00 PM</div>
-                  <div class="cisub">Monday to Sunday</div>
+                  <div class="cival">10:00 AM – 7:00 PM</div>
+                  <div class="cisub">Monday to Saturday</div>
                 </div>
               </div>
               <div class="cirow">
@@ -1192,8 +1753,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Form -->
           <div class="col-lg-8" data-aos="fade-left">
             <div class="ccard">
               <h5
@@ -1210,7 +1769,7 @@
                 <input
                   type="hidden"
                   name="access_key"
-                  value="a715fcbf-161e-4922-9523-261707e61d23"
+                  value="8ae8f7d3-15e1-4f3f-8316-03582190c89d"
                 />
                 <div class="row g-3">
                   <div class="col-md-6">
@@ -1285,7 +1844,6 @@
                       <option>12 PM – 2 PM</option>
                       <option>2 PM – 4 PM</option>
                       <option>4 PM – 6 PM</option>
-                      <option>6 PM – 8 PM</option>
                     </select>
                   </div>
                   <div class="col-12">
@@ -1306,7 +1864,6 @@
                   </div>
                 </div>
               </form>
-
               <script>
                 const form = document.getElementById("bookForm");
                 const submitBtn = document.getElementById("bBtn");
@@ -1386,7 +1943,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
     <script>
       document.getElementById("yr").textContent = new Date().getFullYear();
       AOS.init({
